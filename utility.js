@@ -1,11 +1,11 @@
-function createFrequencyCounter(arr) {
+export const createFrequencyCounter = (arr) => {
     return arr.reduce(function(acc, next) {
       acc[next] = (acc[next] || 0) + 1;
       return acc;
     }, {});
 }
 
-function findMode(arr) {
+export const findMode = (arr) => {
     let freqCounter = createFrequencyCounter(arr);
   
     let count = 0;
@@ -21,7 +21,7 @@ function findMode(arr) {
     return +mostFrequent;
 }
 
-function convertNums(numsAsStrings) {
+export const convertNums = (numsAsStrings) => {
     let result = [];
   
     for (let i = 0; i < numsAsStrings.length; i++) {
@@ -38,14 +38,14 @@ function convertNums(numsAsStrings) {
     return result;
 }
 
-function findMean(nums){
+export const findMean = (nums) => {
     if(nums.length === 0) return 0;
-    return nums.reduce(function (acc, cur) {
+    return nums.reduce((acc, cur) => {
       return acc + cur;
     }) / nums.length
 }
   
-function findMedian(nums){
+export const findMedian = (nums) => {
     // sort and get the middle element
   
     nums.sort((a, b) => a - b);
@@ -60,14 +60,4 @@ function findMedian(nums){
     }
     return median
 }
-  
-  
-  
-module.exports = {
-    createFrequencyCounter,
-    findMean,
-    findMedian,
-    findMode,
-    convertNums
-};
   
